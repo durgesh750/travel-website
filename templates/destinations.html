@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+}
+
+
+{% block state %}
+<style>
+
+.one{width:10px;}
+.one{display: flex;}
+.one:link {font-size: 25px;}
+.one:link {color:#ff0000;}
+.one:visited {color:#0000ff;}
+.one:hover {font-size:250%;font-family: "Comic Sans MS"}
+
+
+
+
+</style>
+
+	
+	<div id="name">
+		<h2>{{ state.name }}</h2></div>
+	{% endblock %}
+
+	{% block places %}
+	
+	{% for x in dest %}
+		{% if state.name == x.state %}
+			<br><br>
+		    <center><a  href="{% url 'description' %}?pk={{x.place}}&user={{uname}}" style="font-size:25px;">{{ x.place }}</a></center>
+			<form action="{% url 'state' %}?p={{pk}}&user={{uname}}&wish={{x.place}}" method="POST">
+			{% csrf_token %}
+			<div>
+				<button type="submit"  style="font-size:16px" >Add to wishlist</button>
+			</div>
+			</form>
+			<div style="border-bottom:solid; border-color:grey;">
+		    <li class="boxone hov1one" style="background-image: url(../static/imag/{{x.place}}1.png);size: cover;"></li>
+		    <li class="boxone hov1one" style="background-image: url(../static/imag/{{x.place}}2.png);"></li>
+		    <li class="boxone hov1one" style="background-image: url(../static/imag/{{x.place}}3.png);"></li> 	
+		    </div>
+
+			
+
+
+	
+	    {% endif %}
+    {% endfor %}
+		
+
+{% endblock %}
+	
+	
+
+
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block writereview %}
+		<body class="reviewbod">
+		
+			<div class="myfont">
+			<h1 align="left"><font color="white">KARNATAKA{{pk}}{{uname}}</h1>
+			<h2 align="left">OOTY</h2><br></font></div>
+			<img class="circle" src="img/ooty.jpg" alt="ooty" style="max-width:100%;height:auto;" ><br>
+			<!--<table>
+			<col width="130">
+			<tr>
+				<th><h4><font color="white">reviews</h4></th><th><a href="writereview.html"><h4><font color="white">write review</h4></a></th> 
+			</tr>
+			</table>-->
+			<div style="background-color:#ffffff;height:300px;width:345px;margin-left:275px">
+				<form method ="POST" action="{% url 'writereview' %}?p={{pk}}&user={{uname}}">
+				{% csrf_token %}
+				<div class ="form-group" style="margin-left:40px;"><br>
+					<label for="id_subject"><b>Add a headline:</b></label><br>
+					<input type="text"  class="form-control" id="id_subject" name="subject" placeholder="Enter key points">
+				</div><br>
+				<div class="form-group" style="margin-left:40px">
+					<label for="id_message"><b>Write Review</label><br>
+					<textarea class="form-control" id="id_message" name="message" rows="5" cols="30" placeholder="write your review here"></textarea>
+				</div>
+				<p style="margin-left:40px"><button type ="submit" class="btn">Post</button></p>
+				</form>
+			</div>
+		</body>
+{% endblock %}

@@ -1,0 +1,68 @@
+
+.circle
+{
+	border-radius:15%
+}
+input
+{
+  -moz-border-radius: 15px;
+ border-radius: 15px;
+    border:solid 1px black;
+    padding:5px;
+}
+.myfont {
+	color:"white";
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	text-shadow: 2px 1px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    width: 85%;
+    opacity: 0.9;
+}
+.btn-comment{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    opacity: 0.9;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+/*/.mytable{
+	 width: 50px;
+    height: 50px;
+    background: green;
+    -webkit-transition: width 2s; 
+    transition: width 2s;
+}
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 2px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	width:100%;
+	opacity:0.8;
+	height:15px;
+}
+
+
+a:hover, a:active {
+    background-color: blue;
+}*/
+
+
+.reviewbod{font-family:Monte carlo; font-size:120%; background-image:url(../img/review4.png);height:100%;background-size:cover;opacity: 1.2;}
+.writereviewbod{font-family:Monte carlo; font-size:120%; background-image:url(../img/review4.jpg);height:100%; background-position:center;background-size:cover;opacity: 1.2}

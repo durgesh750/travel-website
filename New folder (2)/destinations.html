@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block state %}
+<style > 
+
+a.one:link {font-size: 25px;}
+a.one:link {color:#ff0000;}
+a.one:visited {color:#0000ff;}
+a.one:hover {font-size:250%;font-family: "Comic Sans MS"}
+
+</style>
+
+
+	<div id="name">
+		<div id="assam"><h2>{{state.name}}</h2></div>
+	{% endblock %}</div>
+
+	{% block places %}
+	
+	{% for dest in dest %}
+		{% if state.name == dest.state %}
+
+	<center><a class="one" href="{% url 'description' %}?pk={{dest.place}}&user={{uname}}">{{dest.place}}</a></center><br>
+	<center>	<div class="w3-content w3-display-container">
+  <img class="mySlides2" src="{{BASE_DIR}}/static/imag/kamakhya.png" style="width: 1200px;height: 450px;border-style: solid;border-width: 5px;border-color: black">
+  <img class="mySlides2" src="{{BASE_DIR}}/static/imag/kamakhya2.png" style="width: 1200px;height: 450px;border-style: solid;border-width: 5px;border-color: black">
+  <img class="mySlides2" src="{{BASE_DIR}}/static/imag/kamakhya3.png" style="width: 1200px;height: 450px;border-style: solid;border-width: 5px;border-color: black"></center>
+ 
+
+ 
+</div>
+<script>
+var myIndex1 = 0;
+carousel2();
+
+function carousel2() {
+    var j;
+    var x1 = document.getElementsByClassName("mySlides2");
+    for (j = 0; j < x1.length; j++) {
+       x1[j].style.display = "none";  
+    }
+    myIndex1++;
+    if (myIndex1 > x1.length) {myIndex1 = 1}    
+    x1[myIndex1-1].style.display = "block";  
+    setTimeout(carousel2, 2000); // Change image every 2 seconds
+}
+</script>
+	
+	{% endif %}
+{% endfor %}
+		
+
+{% endblock %}
+	
+	
+
+
+
+

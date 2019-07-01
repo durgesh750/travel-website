@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+}
+
+
+{% block state %}
+<style>
+
+.one{width:10px;}
+.one{display: flex;}
+.one:link {font-size: 25px;}
+.one:link {color:#ff0000;}
+.one:visited {color:#0000ff;}
+.one:hover {font-size:250%;font-family: "Comic Sans MS"}
+
+
+
+
+</style>
+
+	
+	<div id="name">
+		<h2>{{ state.name }}</h2></div>
+	{% endblock %}
+
+	{% block places %}
+	
+	{% for x in dest %}
+		{% if state.name == x.state %}
+
+		    <center><a class="one" href="{% url 'description' %}?pk={{x.place}}&user={{uname}}">{{ x.place }}</a></center>
+		    <li class="box hov1" style="background-image: url(../static/imag/{{x.place}}1.jpg);size: cover;"></li>
+		    <li class="box hov1" style="background-image: url(../static/imag/{{x.place}}2.jpg);"></li>
+		    <li class="box hov1" style="background-image: url(../static/imag/{{x.place}}3.jpg);"></li> 	
+		   
+
+			
+
+
+	
+	    {% endif %}
+    {% endfor %}
+		
+
+{% endblock %}
+	
+	
+
+
+
+

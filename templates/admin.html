@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+<body class="adminbody">
+<div class="admin">
+<center>
+<div style="font-family:'Comic Sans MS';font-size:18px;color:black;padding-left:10px;padding-top:-5px;">Authentication</div>
+<a href = "{% url 'databases' %}?id=1">Users</a><br>
+</center>
+</div>
+<div class="admin">
+<center>
+<div style="font-family:'Comic Sans MS';font-size:18px;color:black;padding-left:10px;padding-top:-5px;">App Functions</div>
+<a href = "{% url 'databases' %}?id=2">States</a><br>
+<a href = "{% url 'databases' %}?id=3">History</a><br>
+<a href = "{% url 'databases' %}?id=4">Review</a><br>
+<a href = "{% url 'databases' %}?id=5">Destinations</a>
+</center>
+</div>
+</body>
+{% endblock %}

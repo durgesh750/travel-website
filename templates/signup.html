@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block signup %}
+<body class="signupbody">
+<div class="signup">
+	<div class="heading">
+		Create a new account
+	</div>
+	<form method="POST">
+		{% csrf_token %}
+		<div>
+			<input type="text" id="firstName" name="firstName" placeholder="First Name">
+		</div>
+		<div>
+			<input type="text" id="lastName" name="lastName" placeholder="Last Name">
+		</div>
+		<div>
+			<input type="text" id="email" name="email" placeholder="Email">
+		</div>
+		<div>
+			<input type="text" id="userName" name="userName" placeholder="Username (Maximum 15 characters)">
+		</div>
+		<div>
+			<input type="password" id="password" name="password" placeholder="Password (Maximum 20 characters)">	
+		</div>
+		<div>
+			<input type="password" id="passwordAgain" name="passwordAgain" placeholder="Type the password again">	
+		</div>
+		<div style="color:grey">
+			{{msg}}
+		</div>
+			<button type="submit" >Sign up</button>
+	</form>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block login %}
+<body class="login">
+<div class="logindiv">
+	<div class="heading">
+		Log in
+	</div>
+	<form method="POST">
+		{% csrf_token %}
+		<div>
+			<input type="text" id="userName" name="userName" placeholder="Username" style="font-size:16px">
+		</div>
+		<br>
+		<div>
+			<input type="password" id="password" name="password" placeholder="Password" style="font-size:16px">
+		</div>
+		<div style="color:grey">{{msg}}</div>
+		<br>
+		<div>
+			<button type="submit" style="font-size:16px">Log in</button><br>
+		</div>
+	</form>
+	<div style="color:grey; padding:5px;">Don't have an account?<a href="{% url 'signup'%}">Click here</a></div>
+</div>
+</body>
+{% endblock %}

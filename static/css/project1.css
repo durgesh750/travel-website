@@ -1,0 +1,51 @@
+
+#abc{
+	background-color: #9ACD32;
+	font-size: 40px;
+	height: 100px;
+	width: 2000px;
+	font-style: italic;
+}
+#name{
+	text-align:center;
+	/*border: 1px solid black;
+    outline-style: solid;
+    outline-color: red;*/
+    
+    margin-top: 50px; 
+    font-family: "Comic Sans MS";
+    font-size: 28px;
+
+}
+
+#photo_gap{
+	margin-top: -230px;
+	margin-left: 295px;
+}
+#manas_p{
+	margin-top: -189px;
+	margin-left: 350px;
+}
+.boxone{
+	background-color: #DCDCDC;
+	
+	
+
+	height: 180px;
+	width: 200px;
+	background-size: cover;
+
+	border: 25px green;
+	
+	margin: 50px;
+	display: inline-block;
+	padding: 50px;
+	border-radius:20px;
+	margin-left:80px;
+	
+}
+.hov1one:hover{
+	box-shadow: 0 120px 160px 0 rgba(0,0,0,0.24),0 170px 500px 0 rgba(0,0,0,0.19);
+}
+
+

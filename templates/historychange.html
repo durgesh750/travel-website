@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block details %}
+<body class="signupbody">
+<div class="signup">
+	<div class="heading">
+		Change History Details
+	</div>
+	<form method="POST" action="{% url 'historychange' %}?value={{var}}">
+		{% csrf_token %}
+		<div>
+			<input type="text" id="firstName" name="firstName" placeholder="First Name: {{users.firstName}}" value="{{users.recent}}">
+		</div>
+		<div>
+			<input type="text" id="lastName" name="lastName" placeholder="Last Name: {{users.lastname}}" value="{{users.wishlist}}">
+		</div>
+		
+		<div style="color:grey">
+			{{msg}}
+		</div>
+			<button type="submit" >Save</button>
+	</form>
+</div>
+</body>
+{% endblock %}

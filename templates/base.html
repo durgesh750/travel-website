@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="{{BASE_DIR}}/static/css/design.css"/>
+	<link rel="stylesheet"href="{{BASE_DIR}}/static/css/project1.css"/>
+	<link rel="stylesheet" href="{{BASE_DIR}}/static/css/acc.css"/>
+	<link rel="stylesheet" href="{{BASE_DIR}}/static/css/style.css"/>
+	<link rel="stylesheet" href="{{BASE_DIR}}/static/css/account.css"/>
+	<link rel="stylesheet" href="{{BASE_DIR}}/static/css/home.css"/>
+	<link rel="stylesheet" href="{{BASE_DIR}}/static/css/pass.css"/>
+	<link rel="icon" type="image/gif" href="{{BASE_DIR}}/static/img/favicon.png" />
+	
+	<style>
+	.dropbtn {
+
+	border-style:hidden;
+	background-color:#9ACD32;
+	
+	border-width:2px;
+    color: white;
+    font-size: 13px;
+	display: inline-block
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+	margin-top:10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+	
+	<title>The Wander Lust Travel</title>
+</head>
+{% if uname == 'abc' %}
+<div class="titleBr" style="display:flex">
+	<img src="{{BASE_DIR}}/static/img/favicon.jpg" height=50 width=100>The Pandavas Travel
+<form action="{% url 'search' %}?user={{uname}}" method="POST" style="margin-left:30%;">
+		{% csrf_token %}
+		<input type="text" id="search" name="search" placeholder="Type here" style="margin-right:20px;float:left" />
+		<button type="submit" style="border-style:solid; margin-left:5px;margin-right:180px;;float:right;margin-top:10px;position:absolute;padding:6px;">Search</button>
+</form>
+<span class="navlogsign">
+	<a href="{% url 'login' %}" style="border-style:solid;border-color:white; padding:6px;border-radius:4px;border-width:2px;">Log in</a>
+	<a href="{%url 'signup'%}" style="text-declaration:none;border-style:solid;border-color:white; padding:6px;border-radius:4px;border-width:2px;margin-left:5px;">Sign up</a>
+</span>
+{% else %}
+<div id="topBlock"><div class="topText"><a class="two" href="{% url 'homesecond' %}?user={{uname}}">The Pandavas Travel</a></div>
+<a href="{% url 'account' %}?user={{uname}}"><img class="imgStyle" src="{{BASE_DIR}}/static/img/user.jpeg" style="vertical-align:middle;">{{uname}}</a>
+
+<div class="dropdown">
+
+  <button class="dropbtn h1"><img src="{{BASE_DIR}}/static/img/index.png" height=40 width=40 style="border-style:solid;border-color:black;border-radius:100px;"> </button>
+  <div class="dropdown-content">
+    <a href="{% url 'account' %}?user={{uname}}">My Account</a>
+    <a href="{% url 'homesecond' %}?user={{uname}}">Home</a>
+    <a href="{% url 'home' %}">Logout</a>
+  </div>
+ </div>
+<div>
+ <form action="{% url 'search' %}?user={{uname}}" method="POST" style="margin-left:%;">
+		{% csrf_token %}
+		<input type="text" id="search" name="search" placeholder="Type here" style="margin-right:20px;float:left" />
+		<button type="submit" style="border-style:solid; margin-left:5px;margin-right:180px;;float:right;margin-top:10px;position:absolute;padding:6px;">Search</button>
+</form>
+</div>
+  </div>
+{% endif %}
+</div>
+	{% block login %}
+	{% endblock %}
+</div>
+<div>
+	{% block signup %}
+	{% endblock %}
+</div>
+<div>
+	{% block home %}
+	{% endblock %}
+	{% block description %}
+	{% endblock %}
+	{% block state %}
+	{% endblock %}
+	{% block places %}
+	{% endblock %}
+	{% block review %}
+	{% endblock %}
+	{% block writereview %}
+	{% endblock %}
+	{% block error %}
+	{% endblock %}
+	{% block account %}
+	{% endblock %}
+	{% block admin%}
+	{% endblock %}
+	{% block databases %}
+	{% endblock %}
+	{% block details %}
+	{% endblock %}
+	{% block pass %}
+	{% endblock %}
+</div>
+
+
+
+</html>

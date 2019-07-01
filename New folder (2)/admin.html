@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block admin %}
+<body class="adminbody">
+<div class="admin">
+<center>
+<a href = "{% url 'databases' %}?id=1">Users</a><br>
+<a href = "{% url 'databases' %}?id=2">States</a><br>
+<a href = "{% url 'databases' %}?id=3">History</a><br>
+<a href = "{% url 'databases' %}?id=4">Review</a><br>
+<a href = "{% url 'databases' %}?id=5">Destinations</a>
+</center>
+</div>
+</body>
+{% endblock %}

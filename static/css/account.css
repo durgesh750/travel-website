@@ -1,0 +1,133 @@
+#topBlock{
+	display:flex;
+	margin-left:-20px;
+	margin-top:-4px;
+	margin-right:-10px;
+	padding:10px 60px 10px 60px;
+	
+background-color:#9ACD32;
+}
+.dropdown {
+	border:2px hidden black;
+	background-color:#9acd32;
+	margin-top:20px;
+	margin-left:20px; 
+	margin-right:20px;
+    position: relative;
+    display: inline-block;
+}
+.dropdown:hover .dropdown-content {
+display: block;}
+.topText{
+	font-family:"Comic Sans MS";
+	font-size:28px;
+	color:white;
+	
+	
+}
+.imgStyle{
+	border:2px solid black;
+	margin-left:500px;
+	margin-top:2px;
+	width:50px;
+	height:49px;
+border-radius:100px;
+vertical-align:center}
+.topButton{
+	border:2px solid black;
+	background-color:#9ACD32;
+	margin-left:120px;
+margin-top:50px;}
+
+
+.accountDetail{
+	text-shadow:2px 2px #000000;
+	height:30px;
+	width:160px;
+	margin-left:-8px;
+	
+background-color:#80d0c7;}
+.accText{
+	font-family:"Comic Sans MS";
+	font-size:18px;
+	
+	color:white;
+	padding-left:10px;
+	padding-top:-5px;
+}
+.detail{
+	background: linear-gradient(to right, #80d0c7,#9ACD32);
+	font-family:"Comic Sans MS";
+	margin-left:-8px;
+	color:white;
+	
+	height:400px;
+	width:1378px;
+}
+.accName{
+	font-size:25px;
+	height:30px;
+	width:150px;
+	margin-left:10px;
+}
+.fromDjango{
+	color:black;
+	font-family:"Comic Sans MS";
+	margin-left:20px;
+}
+.bottomButton{
+	border:2px solid black;
+	background-color:#80d0c7;
+	margin-left:1px;
+margin-top:5px;}
+.detail2{
+	
+	font-family:"Comic Sans MS";
+	margin-left:-1px;
+	color:white;
+	background: linear-gradient(to right, #80d0c7,#9ACD32);
+	height:50px;
+	width:1378px;
+}
+/* The sidebar menu */
+.sidenav {
+    height:100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #FFF; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #9acd32;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #000000;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+} 
+.topButton {
+    border: black; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 14px 28px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+}	
+.success {background-color: #9acd32;} /* Green */
+.success:hover {background-color: #000;}
+	

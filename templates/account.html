@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block account %}
+<body>
+</br></br><div class="accountDetail"><div class="accText">Account Details</div></div>
+</br>
+</br>
+<div class="detail"><div class="accName">Name:</div>
+<div class="fromDjango">{{ user.firstName }} {{user.lastname}}</div></br>
+<div class="accName">USERNAME:</div>
+<div class="fromDjango">{{ user.username }}</div></br>
+<div class="accName">EMAIL:</div>
+<div class="fromDjango">{{ user.email }}</div></br>
+<div class="fromDjango">NAME</div></br>
+<div class="fromDjango">{{ user.username }}</div></br>
+<div class="accName">PASSWORD:</div>
+<div class="fromDjango"><h3>********</br><a class="bottomButton" href="{% url 'passwordchange' %}?value={{uname}}">Change Password</a></div></div>
+</br></br><div class="accountDetail"><div class="accText">Reviews Written</div></div></br></br>
+<div class="detail2"><a href="">State name place name</a></div></div>
+</br></br><div class="accountDetail"><div class="accText"><a href="{% url 'recentsearch' %}?user={{user.username}}">Recent Searches</a></div></div></br></br>
+
+</br></br><div class="accountDetail"><div class="accText">Wishlist</div></div></br></br>
+<div class="detail2">
+{% for history in histories %}
+{% if history.uid.username == user.username %}
+<a href="{% url 'description' %}?pk={{history.wishlist}}&user={{user.username}}">{{history.wishlist}}</a>
+{% endif %}
+{% endfor %}
+</div></div>
+<!-- Side navigation -->
+<!--<div class="sidenav">
+  <a href="#">Home Page</a>
+  </br>
+  </br>
+  <a href="#">Wishlist</a>
+
+</div>
+
+
+
+</html>-->
+</body>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block home %}
+<!-- <div class="titleBar" style="display:flex"> -->
+
+<header>
+		<div class="home">
+		<h1>Don't listen to what they say.<br>Go see!<h1>
+		</div>
+</header>
+	
+	
+<div style="margin-top:40px; margin-left:80px;">
+<ul id="myMenu">
+
+	{% for state in states %}
+	<li class = "box hov1" style="background-image:url(../static/imag/{{state.img}}.png);">
+            <a href="{% url 'state' %}?pk={{state.name}}&user={{uname}}" class="one"><center>
+            {{state.name}}</center></a></li>
+     {% endfor %}
+
+</ul>
+</div>
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("mySearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myMenu");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+<div class="footer"><center>
+<img src="{{BASE_DIR}}/static/img/favicon.jpg" height=50 width=100><br>
+</center>
+</div>
+{% endblock %}

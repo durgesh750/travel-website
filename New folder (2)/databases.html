@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block databases %}
+
+<body class="databasebody">
+{% if name == 1 %}
+Users:<br>
+{% for name in user %}
+	<a href="{% url 'userchange' %}?value={{name.username}}">{{name.username}}</a><br>
+	{% endfor %}
+{% elif name == 2 %}
+	{% for name in states %}
+	<a href="{% url 'statechange' %}?value={{name.name}}">{{name.name}}</a><br>
+	{% endfor %}
+{% elif name == 3 %}
+	{% for name in histories %}
+	<a href="{% url 'historychange' %}?value={{name.uid.username}}">{{name.uid.username}}</a><br>
+	{% endfor %}
+{% elif name == 4 %}
+	{% for name in reviews %}
+	<a href="{% url 'reviewchange' %}?value={{name.id}}">{{name.uid.username}}</a><br>
+	{% endfor %}
+{% elif name == 5 %}
+	{% for name in destinations %}
+	<a href="{% url 'destinationchange' %}?value={{name.place}}">{{name.place}}</a><br>
+{% endfor %}
+{% endif %}
+{% endblock %}
+</body>

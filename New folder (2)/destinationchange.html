@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block details %}
+<body class="signupbody">
+<div class="signup">
+	<div class="heading">
+		Change destination
+	</div>
+	<form method="POST" action="{% url 'destinationchange' %}?value={{var}}">
+		{% csrf_token %}
+		<div>
+			<input type="text" id="firstName" name="firstName" placeholder="First Name: {{users.firstName}}" value="{{users.place}}">
+		</div>
+		<div>
+			<input type="text" id="lastName" name="lastName" placeholder="Last Name: {{users.lastname}}" value="{{users.state}}">
+		</div>
+		<div>
+			<input type="text" id="email" name="email" placeholder="Email: {{users.email}}" value="{{users.desc}}">
+		</div>
+		<div>
+			<input type="text" id="userName" name="userName" placeholder="Username: {{users.username}}" value="{{users.imghome}}">
+		</div>
+		<div>
+			<input type="text" id="password" name="password" placeholder="Password: {{users.password}}" value="{{users.img1}}">	
+		</div>
+		<div>
+			<input type="text" id="active" name="active" placeholder="Active: {{users.active}}" value="{{users.img2}}">	
+		</div>
+		<div>
+			<input type="text" id="active" name="active" placeholder="Active: {{users.active}}" value="{{users.img3}}">	
+		</div>
+		<div style="color:grey">
+			{{msg}}
+		</div>
+			<button type="submit" >Save</button>
+	</form>
+</div>
+</body>
+{% endblock %}

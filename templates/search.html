@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block home %}
+<!-- <div class="titleBar" style="display:flex"> -->
+	
+<div>
+<ul id="myMenu">
+
+	<li class = "box hov1">
+            <a href="{% url 'state' %}?pk={{query}}&user={{uname}}"><img src="{{BASE_DIR}}\static\imag\{{query}}.png" width="200px" height="200px"><br>
+            {{query}}</a></li>
+
+</ul>
+</div>
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("mySearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myMenu");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+{% endblock %}

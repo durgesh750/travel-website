@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block details %}
+<body class="signupbody">
+<div class="signup">
+	<div class="heading">
+		Change user details
+	</div>
+	<form method="POST" action="{% url 'userchange' %}?value={{var}}">
+		{% csrf_token %}
+		<div>
+			<input type="text" id="firstName" name="firstName" placeholder="First Name: {{users.firstName}}" value="{{users.firstName}}">
+		</div>
+		<div>
+			<input type="text" id="lastName" name="lastName" placeholder="Last Name: {{users.lastname}}" value="{{users.lastname}}">
+		</div>
+		<div>
+			<input type="text" id="email" name="email" placeholder="Email: {{users.email}}" value="{{users.email}}">
+		</div>
+		<div>
+			<input type="text" id="userName" name="userName" placeholder="Username: {{users.username}}" value="{{users.username}}">
+		</div>
+		<div>
+			<input type="text" id="password" name="password" placeholder="Password: {{users.password}}" value="{{users.password}}">	
+		</div>
+		<div>
+			<input type="text" id="active" name="active" placeholder="Active: {{users.active}}" value="{{users.active}}">	
+		</div>
+		<div style="color:grey">
+			{{msg}}
+		</div>
+			<button type="submit" >Save</button>
+	</form>
+</div>
+</body>
+{% endblock %}

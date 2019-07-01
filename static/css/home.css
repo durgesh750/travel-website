@@ -1,0 +1,30 @@
+*
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+	font-family:tahoma;
+}
+
+.home
+{
+	position:absolute;
+	width:1140px;
+	top:50%;
+	left:80%;
+	transform:translate(-50%,-50%);
+}
+
+header
+{
+	background-image:linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.01)),url(../imag/home.png);
+	height:100vh;
+	background-position:center;
+	background-size:cover;
+}
+
+h1{
+	color:white;
+}

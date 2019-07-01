@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block writereview %}
+{% load static %}
+		<body class="reviewbod">
+		
+			<div class="myfont">
+			<h1 align="center" style="margin-bottom:-30px"><font color="white">State : Karnataka</h1><br>
+			<h2 align="center" style="margin-bottom:-30px"><font color="white">Destination : {{pk}}</h2><br>
+			<h3 align="center" style="margin-bottom: 25px"><font color="white">Username :{{uname}}</h3>
+	
+			<!--<table>
+			<col width="130">
+			<tr>
+				<th><h4><font color="white">reviews</h4></th><th><a href="writereview.html"><h4><font color="white">write review</h4></a></th> 
+			</tr>
+			</table>-->
+			<div style="background-color: lightgrey;height:170px;width:300px;margin-left:auto;margin-right:auto;text-declaration:none;border-style:solid;border-color:white; padding:6px;border-radius:10px;border-width:2px;">
+				<form method ="POST" action="{% url 'writereview' %}?p={{pk}}&user={{uname}}">
+				{% csrf_token %}
+				<div align="center" class="form-group" style="margin-left:auto;margin-right:auto">
+					<label for="id_message"><b>Review</label><br>
+					<textarea class="form-control" id="id_message" name="message" rows="5" cols="30" placeholder="write your review here"style="text-declaration:none;border-style:solid;border-color:white; padding:6px;border-radius:20px;border-width:2px;margin-left:25px;margin-right:20px;"></textarea>
+				</div>
+			     <button align="center" type ="submit" class="btn h1" style="text-declaration:none;border-style:solid;border-color:white; padding:6px;border-radius:10px;border-width:2px;margin-left:25px;margin-right:20px;">Post</button>
+				</form>
+			</div>
+		</body>
+{% endblock %}

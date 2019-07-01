@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block description %}
+<div class="desc">
+<div style="font-size:45px; color: #9ACD32;">
+	<center>{{dest.state}}</center>
+</div>
+<div style="font-size: 30px;">
+	<center>{{dest.place}}</center>
+</div>
+<div class="container">
+
+	<input type="radio" name="images" id="i1" checked>
+	<input type="radio" name="images" id="i2">
+	<input type="radio" name="images" id="i3">
+	
+	<div class="slide_img" id="one">
+		<img src="{{BASE_DIR}}/static/imag/{{dest.place}}3.png" height=400 width=800/>
+		
+		<label for="i3" class="pre"></label>
+		<label for="i2" class="nxt"></label>
+		
+	</div>
+	
+	<div class="slide_img" id="two">
+		<img src="{{BASE_DIR}}/static/imag/{{dest.place}}1.png" height=400 width=800/>
+		
+		<label for="i1" class="pre"></label>
+		<label for="i3" class="nxt"></label>
+		
+	</div>
+	
+	<div class="slide_img" id="three">
+		<img src="{{BASE_DIR}}/static/imag/{{dest.place}}2.png" height=400 width=800/>
+		
+		<label for="i2" class="pre"></label>
+		<label for="i1" class="nxt"></label>
+		
+	</div>
+	<div class="nav">
+		<label class="dots" id="dot1" for="i1"></label>
+		<label class="dots" id="dot2" for="i2"></label>
+		<label class="dots" id="dot3" for="i3"></label>
+	</div>
+	
+</div>
+
+<div class="desctext">
+<center>{{dest.desc}}</center>
+</div>
+<div style="border-style:hidden;padding-bottom:40px; font-size:30px;">
+
+<center>
+<a href="{% url 'reviews' %}?pk={{dest.place}}&user={{uname}}">Reviews</a><br><br><br>
+</center>
+</div>
+
+</div>
+{% endblock %}

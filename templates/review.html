@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block review %}
+		<body class="reviewbod">
+			<div class="myfont">
+			<h1 align="center"><font color="white">Destination : {{dest}}</h1>
+			</div>
+			<h3 align="center"><font color="white"><u>Reviews by other users:</u></h3><br>
+			{% for  l in list %}
+			<p align="center"><font color="white">{{uname}} : {{l}}</p><br>
+			
+			{% endfor %}
+			<!-- <form method ="POST">
+				<div class="form-group" style="margin-left:10px">
+					<label for="id_message"><font color="white">Comments:</label><br>
+					<textarea class="form-control" id="id_message" name="message" rows="5" cols="30" placeholder="write your comments here"></textarea>
+				</div>
+				<p style="margin-left:10px"><button type ="submit" class="btn-comment">Post</button></p>
+				</form> -->
+			<a href="{% url 'writereview' %}?pk={{dest}}&user={{uname}}"><h2 align="center"><font color="white">Write your own review</h2></a>
+			
+	</body>
+{% endblock %}	
+

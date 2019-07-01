@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block databases %}
+
+<body class="databasebody">
+<div class="admin">
+<center>
+{% if id == 1 %}
+Users:<br>
+{% for name in user %}
+	<a href="{% url 'userchange' %}?value={{name.username}}">{{name.username}}</a><a href="{% url 'delete' %}?identity={{id}}&user={{name.username}}">(X)</a><br>
+	{% endfor %}
+{% elif id == 2 %}
+States:<br>
+	{% for name in states %}
+	<a href="{% url 'statechange' %}?value={{name.name}}">{{name.name}}</a><a href="{% url 'delete' %}?identity={{id}}&user={{name.name}}">(X)</a><br>
+	{% endfor %}	
+{% elif id == 3 %}
+History:<br>
+	{% for name in histories %}
+	<a href="{% url 'historychange' %}?value={{name.uid.username}}">{{name.uid.username}}</a><a href="{% url 'delete' %}?identity={{id}}&user={{name.id}}">(X)</a><br>
+	{% endfor %}
+{% elif id == 4 %}
+Reviews:<br>
+	{% for name in reviews %}
+	<a href="{% url 'reviewchange' %}?value={{name.id}}">{{name.uid.username}}</a><a href="{% url 'delete' %}?identity={{id}}&user={{name.id}}">(X)</a><br>
+	{% endfor %}
+{% elif id == 5 %}
+Destination:<br>
+	{% for name in destinations %}
+	<a href="{% url 'destinationchange' %}?value={{name.place}}">{{name.place}}</a><a href="{% url 'delete' %}?identity={{id}}&user={{name.place}}">(X)</a><br>
+{% endfor %}
+{% endif %}
+{% endblock %}
+</center>
+</div>
+</body>
